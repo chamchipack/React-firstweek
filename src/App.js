@@ -7,15 +7,16 @@ import { useState } from 'react';
 
 function App() {
   let [days, daysChange] = useState(['일','월','화','수','목','금','토']);
+  let [whatDay, whatDayChange] = useState();
   
 
   return (
     <div className="App">
       <Route path='/' exact>
-        <Week days={days} daysChange={daysChange} ></Week>
+        <Week days={days} daysChange={daysChange} wdc={whatDayChange}></Week>
       </Route>
       <Route path='/week' exact>
-        <Detail></Detail>
+        <Detail whatDay={whatDay}></Detail>
       </Route>
     </div>
   );

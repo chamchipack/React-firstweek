@@ -1,6 +1,7 @@
 import {React} from 'react';
 import './week.css';
 import {Route, Link} from 'react-router-dom';
+import Days from './division';
 
 function Week(props){
   // app.js에서 요일 배열 받아옴
@@ -21,7 +22,7 @@ function Week(props){
       num : parseInt(Math.random()*5+1)
     }
   })
-  const array = [2,4,3,5,1]
+  
     // 1. week 부분 컴포넌트화 시키기 2. Link 인덱스값 넘겨서 구분하기 // 3. useEffect
     return(
         <>
@@ -32,17 +33,8 @@ function Week(props){
             week.map((days,i)=>{
               let rate = week_rate[i].num
               return(
-              <div key={i} className='week'>
-                <p>{days}</p>
-                {
-                  array.map((el,idx)=>{
-                   return ( 
-                   <div className='point-circle' style={{backgroundColor : rate <= idx ? "#eee" : "#ffeb3b"}}></div>
-                   )
-                  })
-                }
-                <Link to='/week'><div className='trian'></div></Link>
-            </div>)
+                <Days days={days} i={i} rate={rate} wdc={props.wdc}/>
+              )
             })
           }
         </div>
