@@ -1,7 +1,8 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import './week.css';
 import {Route, Link} from 'react-router-dom';
 import Days from './division';
+import {useEffect, useReducer} from 'react'
 
 function Week(props){
   // app.js에서 요일 배열 받아옴
@@ -27,19 +28,20 @@ function Week(props){
     return(
         <>
         <div className='main-box'>
-        <div className='main-inner-box'>
-          <div className='title-box'><h3>나의 일주일은</h3></div>
-          {
-            week.map((days,i)=>{
-              let rate = week_rate[i].num
-              return(
-                <Days days={days} i={i} rate={rate} wdc={props.wdc}/>
-              )
-            })
-          }
-        </div>
-      </div>
-        </>
+          <div className='main-inner-box'>
+            <div className='title-box'><h3>나의 일주일은</h3></div>
+            {
+              week.map((days,i)=>{
+                let rate = week_rate[i].num
+                return(
+                  <Days days={days} i={i} rate={rate} wdc={props.wdc} par={props.par}/>
+                )
+              })
+           }
+         </div>
+       </div>
+      </>
     )
 }
 export default Week
+

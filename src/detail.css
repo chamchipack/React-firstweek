@@ -18,6 +18,14 @@
     float:left;
     margin-left: 10px;
 }
+.styled{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: paleturquoise;
+    float:left;
+    margin-left: 10px;
+}
 .detail-btn{
     width: 100px;
     height: 40px;
