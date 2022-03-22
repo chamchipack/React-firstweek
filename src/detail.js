@@ -4,7 +4,6 @@ import { useLocation, useHistory } from 'react-router-dom'
 import { useState } from 'react';
 
 function Detail(props){
-    const array = [1,2,3,4,5]
     let [style, styleChange] = useState();
     let [rate, setRate] = useState(0);
     let history = useHistory();
@@ -15,11 +14,11 @@ function Detail(props){
     return (
         <>
         <div className="detail-box">
-            <h3 style={{marginTop: 50}}>{`${props.whatDay}요일의 평점`}</h3>
+            <h3 style={{marginTop: 50}}>{`${props.getWhatDay}요일의 평점`}</h3>
             <div className="detail-inner">
-                <p>{props.whatDay}</p>
+                <p>{props.getWhatDay}</p>
                 {
-                    array.map((e,idx)=>{
+                    Array.from({length:5},(element,idx)=>{
                         return(
                             <div key={idx} onClick={()=>{styleChange('yellow'); press(); setRate(idx+1)}} className="detail-circle" style={{backgroundColor: rate > idx ? style : '#eee'}}></div>
                         )

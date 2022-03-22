@@ -4,23 +4,22 @@ import {useEffect, useState} from 'react';
 
 function Division(props){
   const history = useHistory();
-    let i = props.i
     let days = props.days;
-    let rate = props.rate;
-    let wdc = props.wdc
-    const array = [2,4,3,5,1]
+    let ran_rate = props.ran_rate;
+    let setWhatDay = props.setWhatDay
+    let dayNum = props.dayNum;
     return(
       <>
-        <div key={i} className='week'>
+        <div className='week'>
           <p>{days}</p>
             {
-              array.map((el,idx)=>{
+              Array.from({length:5},(el,idx)=>{
                 return ( 
-                <div className='point-circle' style={{backgroundColor : rate <= idx ? "#eee" : "#ffeb3b"}}></div>
+                <div className='point-circle' style={{backgroundColor : ran_rate <= idx ? "#eee" : "#ffeb3b"}}></div>
                )
               })
             }
-          <div className='trian' onClick={()=>{history.push(`/week/${props.par}`); wdc(days)}}></div>
+          <div className='triangle-btn' onClick={()=>{setWhatDay(days); history.push(`/week/${dayNum}`) }}></div>
         </div>
       </>
     )
