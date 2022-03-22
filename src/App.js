@@ -3,6 +3,7 @@ import './App.css';
 import Week from './week'
 import {Route} from 'react-router-dom';
 import Detail from './detail'
+import Example from './example'
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path='/week/:idxNum' exact>
         <Detail getWhatDay={getWhatDay}></Detail>
       </Route>
+      <Example></Example>
     </div>
   );
 }

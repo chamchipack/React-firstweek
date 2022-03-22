@@ -5,7 +5,6 @@ import Days from './division';
 import {useEffect, useReducer} from 'react'
 
 function Week(props){
-  // app.js에서 요일 배열 받아옴
   let getDays = props.getDays
   // 배열을 반복시킨것에 오늘의 요일을 Date함수로 받아줌
   const weekAllDays = getDays.map((e,idx)=>{
@@ -28,6 +27,7 @@ function Week(props){
       ran_point : parseInt(Math.random()*5+1)
     }
   })
+  console.log(week_random_point)
     // 1. week 부분 컴포넌트화 시키기 2. Link 인덱스값 넘겨서 구분하기 // 3. useEffect
     return(
         <>

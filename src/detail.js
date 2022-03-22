@@ -7,10 +7,13 @@ function Detail(props){
     let [style, styleChange] = useState();
     let [rate, setRate] = useState(0);
     let history = useHistory();
-    const press = ()=>{
-        console.log('clicked : ', rate)
+    const press = (event)=>{
+        console.log(event.key)
+        let pushNum = event.key
+        return setRate(pushNum)
     }
     window.addEventListener('keydown', press)
+    
     return (
         <>
         <div className="detail-box">
@@ -20,7 +23,7 @@ function Detail(props){
                 {
                     Array.from({length:5},(element,idx)=>{
                         return(
-                            <div key={idx} onClick={()=>{styleChange('yellow'); press(); setRate(idx+1)}} className="detail-circle" style={{backgroundColor: rate > idx ? style : '#eee'}}></div>
+                            <div key={idx} onClick={()=>{styleChange('yellow'); press();setRate(idx+1)} } className="detail-circle" style={{backgroundColor: rate > idx ? style : '#eee'}}></div>
                         )
                     })
                 }
