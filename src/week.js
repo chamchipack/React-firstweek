@@ -15,6 +15,7 @@ function Week(props){
     : today + idx
     return getDays[check]
   })
+  console.log(weekAllDays)
   // 오늘의 요일이 먼저오는 배열을 반복시켜 오브젝트로 난수와 함께 담아준다.
   const week_random_point = weekAllDays.map((e,idx)=>{
     let today = new Date().getDay();
@@ -27,7 +28,6 @@ function Week(props){
       ran_point : parseInt(Math.random()*5+1)
     }
   })
-  console.log(week_random_point)
     // 1. week 부분 컴포넌트화 시키기 2. Link 인덱스값 넘겨서 구분하기 // 3. useEffect
     return(
         <>

@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 function App() {
   let [getDays, setDays] = useState(['일','월','화','수','목','금','토']);
   let [getWhatDay, setWhatDay] = useState();
-
+  
   return (
     <div className="App">
       <Route path='/' exact>
